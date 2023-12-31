@@ -31,6 +31,7 @@ import com.shatteredpixel.shatteredpixeldungeon.Rankings;
 import com.shatteredpixel.shatteredpixeldungeon.SPDSettings;
 import com.shatteredpixel.shatteredpixeldungeon.ShatteredPixelDungeon;
 import com.shatteredpixel.shatteredpixeldungeon.Statistics;
+import com.shatteredpixel.shatteredpixeldungeon.actors.Agent;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Actor;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.actors.blobs.Blob;
@@ -763,6 +764,10 @@ public class GameScene extends PixelScene {
 			g.destroy();
 		}
 		toDestroy.clear();
+
+		if (Dungeon.hero.ready) {
+			Agent.doAction();
+		}
 	}
 
 	private static Point lastOffset = null;
